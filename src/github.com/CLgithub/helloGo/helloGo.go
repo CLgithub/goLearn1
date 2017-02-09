@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/clgithub/stringutil"
+	"github.com/CLgithub/stringutil"
 )
 
 func main() {
