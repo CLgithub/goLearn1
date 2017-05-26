@@ -9,8 +9,25 @@ func main() {
 	// array1()
 	// slece1()
 	// slice2()
-	slice3()
+	// slice3()
+	slice4()
 
+}
+
+//构造slice make([]type,len,cap)
+func slice4() {
+	a:=make([]int,5)	//创建一个长度和容量都是5的数组，并返回一个slice指向这个数组
+	printSlice("a",a)
+	b:=make([]int,1,5)	//创建一个长度为1容量为5的数组，赋给b
+	printSlice("b",b)
+	c:=b[0:2]			//截取b的0到2位给c
+	printSlice("c",c)
+	d:=c[2:3]			//截取c的2到5位给d
+	printSlice("d",d)
+}
+
+func printSlice(s string,x []int) {
+	fmt.Printf("%s=%d len=%d cap=%d\n",s,x,len(x),cap(x))	
 }
 
 //slice2切片
