@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+
 func main() {
 	// pointer1()
 	// struct1()
