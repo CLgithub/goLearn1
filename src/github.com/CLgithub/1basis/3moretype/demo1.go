@@ -6,8 +6,56 @@ func main() {
 	// pointer1()
 	// struct1()
 	// fmt.Println(v1, v2, v3, p, p4)
-	array1()
+	// array1()
+	// slece1()
+	// slice2()
+	slice3()
 
+}
+
+//slice2切片
+//slice可以从新切片创建一个新的 slice 值指向相同的数组
+// s[i:j]  表示slice s的第i个元素到第j个元素组成的新slice，包头不包尾
+func slice3() {
+	s1:=[]int{2,5,1,56,322,5}
+	// fmt.Println(s1[1:7])
+	fmt.Println(s1[1:6])
+	fmt.Println(s1[1:3])
+	fmt.Println(s1[1:2])
+	fmt.Println(s1[1:1])
+	// fmt.Println(s1[1:0])	 //	
+}
+
+//slice 的 slice (一个序列slice，其元素也是一个序列slice)
+func slice2() {
+	game := [][] string{
+		[]string{"*","-","*"},
+		[]string{"-","*","-"},
+		[]string{"*","-","*"},
+	}
+
+	game[2][1]="#"
+
+	for i:=0; i<len(game); i++{
+		for j:=0; j<len(game[i]); j++{
+			fmt.Print(game[i][j])
+		}
+		fmt.Println()
+	} 	
+}
+
+//slice	片
+/*
+	一个 slice 会指向一个序列的值，并且包含了长度信息
+	数组[]T 是一个元素类型为 T 的 slice，（数组是一个特殊的slice）
+	len(s) 返回slice的长度
+*/
+func slece1() {
+	a:=[]int{2,4,1,5}	
+	fmt.Println("a ==",a)
+	for i:=0; i<len(a); i++ {
+		fmt.Printf("s[%d] == %d\n",i,a[i])
+	}
 }
 
 //数组
