@@ -7,13 +7,86 @@ func main() {
 	// struct1()
 	// fmt.Println(v1, v2, v3, p, p4)
 	// array1()
+	// slice0()
 	// slece1()
 	// slice2()
 	// slice3()
 	// slice4()
-	slice5()
+	// slice5()
+	// slice6()
+	// slice7()o
+	slice8()
 }
 
+//append方法 向切片追加元素
+func slice8() {
+	var a []int
+	b:=append(a,0)		//向a追加一个元素0，得到新的slice，赋给b		
+	// c:=[]int{0,1}
+	printSlice("a",a)			//a=([])
+	printSlice("b",b)			//b=([0])
+	fmt.Println("--------------------")	
+	a=append(b,1)				//a=([0,1])
+	printSlice("a",a)
+	// a1:=append(c,1)				//a1=([0,1,1],0)
+	// printSlice("a1",a1)
+
+	a=append(a,2)				//a=([0,1,2],0)
+	printSlice("a",a)
+	a=append(a,3)				//a=([0,1,2,3])
+	printSlice("a",a)
+}
+
+//切片的0值 nil
+func slice7() {
+	var a []int
+	fmt.Println(a,len(a),cap(a))
+	if a==nil{
+		fmt.Println("a==nil")
+	}
+}
+
+//slice文法
+func slice6() {
+	q := []int{2, 3, 5, 7, 11, 13}
+	fmt.Println(q)
+
+	r := []bool{true, false, true, true, false, true}
+	fmt.Println(r)
+
+	s := []struct {		//struct 结构体，定义一个匿名结构体，类似匿名内部类
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
+	}
+	fmt.Println(s)
+}
+
+func slice0() {
+	/*
+	每个数组的大小都是固定的。 而切片则为数组元素提供动态大小的、灵活的视角。 在实践中，切片比数组更常用。
+	切片就像数组的引用
+		切片并不存储任何数据， 它只是描述了底层数组中的一段。
+		更改切片的元素会修改其底层数组中对应的元素。
+		与它共享底层数组的切片都会观测到这些修改。
+
+	*/
+	names:=[4]string{"a","b","c","d"}
+	fmt.Println(names)
+	b:=names[1:3]
+	c:=names[2:4]
+	fmt.Println(b,c)
+	c[0]="x"
+	fmt.Println(b,c)
+	fmt.Println(names)
+	
+}
 
 func slice5() {
 	// len:[]		cap:()
